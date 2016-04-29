@@ -1,0 +1,24 @@
+# Mac Cruft
+.DS_Store
+._*
+
+# Windows Cruft
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# General Cruft
+*.bak
+
+# Assembled and compiled binaries
+
+a.out
+*.o
+hello_arg
+hello_argvar
+hello_argvar_memcpy
+hello_argvar_strcpy
+hello_min
+hello_str
+hello_str_64
+hello_var
