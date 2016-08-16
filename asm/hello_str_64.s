@@ -15,5 +15,5 @@ _main:
 	syscall
 
 	movl $0, %ebx
-	movl $0x2000001, %eax			# exit 0
+	movl $0x2000000, %eax			# exit 0
 	syscall
