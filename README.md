@@ -94,7 +94,7 @@ Notes regarding the compilation of simple "Hello, world!" apps.
 | Crystal   | 2                   | 4           | 1            | 7     | 3                  |
 | D         | 2                   | 5           | 1            | 8     | 3                  |
 | Fantom    | 2                   | 1           | 4            | 7     | 6                  |
-| Go        | 2                   | 5           | 1            | 8     | 3                  |
+| Go        | 3                   | 5           | 1            | 9     | 4                  |
 | ooc       | 1                   | 4           | 2            | 7     | 3                  |
 | Python 2  | 1                   | 1           | 2            | 4     | 3                  |
 | Python 3  | 1                   | 1           | 2            | 4     | 3                  |
