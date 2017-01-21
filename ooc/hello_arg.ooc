@@ -1,3 +1,5 @@
 main: func (args: String[]) {
-	"Hello, %s!" printfln(args[1])
+	x := "Hello, #{args[1]}!"
+
+	x println()
 }

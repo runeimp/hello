@@ -1,5 +1,5 @@
 #
-# Makefile for Rust Hello World examples
+# Makefile for Crystal Hello World examples
 #
 
 
@@ -10,9 +10,9 @@ default:
 all:
 	@clear
 	@echo
-	@make cleanall
-	@echo
 	@make str
+	@echo
+	@make str-dev
 	@echo
 	@make var
 	@echo
@@ -22,23 +22,28 @@ all:
 	@echo
 
 
-str: hello_str.rs
-	rustc hello_str.rs
+str: hello_str.cr
+	crystal build --release --stats hello_str.cr
 	./hello_str
 
 
-var: hello_var.rs
-	rustc hello_var.rs
+str-dev: hello_str.cr
+	crystal build --stats hello_str.cr -o hello_str-dev
+	./hello_str-dev
+
+
+var: hello_var.cr
+	crystal build --release --stats hello_var.cr
 	./hello_var
 
 
-arg: hello_arg.rs
-	rustc hello_arg.rs
+arg: hello_arg.cr
+	crystal build --release --stats hello_arg.cr
 	./hello_arg 'Command Line'
 
 
-env: hello_env.rs
-	rustc hello_env.rs
+env: hello_env.cr
+	crystal build --release --stats hello_env.cr
 	HELLO=Environment ./hello_env
 
 
@@ -55,10 +60,25 @@ test:
 	@echo
 
 
+clean:
+	@echo "Cleaning up..."
+	@make cleanall
+	@ls -ahl
+
+
+cleanall:
+	@rm -f hello_str
+	@rm -f hello_str-dev
+	@rm -f hello_var
+	@rm -f hello_arg
+	@rm -f hello_env
+
+
 list:
 	@echo
 	@echo 'make            Run all example build and test tasks'
 	@echo 'make str        Build the print string example and test it'
+	@echo 'make str-dev    Build the unoptimised print string example and test it'
 	@echo 'make var        Build the print variable string example and test it'
 	@echo 'make arg        Build the print command line argument example and test it'
 	@echo 'make env        Build the print environment variable example and test it'
@@ -71,21 +91,5 @@ list:
 	@echo
 
 
-clean:
-	@clear
-	@echo "Cleaning up..."
-	@make cleanall
-	@ls -alh
-
-
-cleanall:
-	@rm -f hello_str
-	@rm -f hello_var
-	@rm -f hello_arg
-	@rm -f hello_env
-
-
 ver:
-	@rustc -V
-
-
+	crystal version

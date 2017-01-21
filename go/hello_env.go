@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	x := fmt.Sprintf("Hello, %s!", os.Args[1])
+	x := fmt.Sprintf("Hello, %s!", os.Getenv("HELLO"))
 
 	fmt.Printf("%s\n", x)
 }
