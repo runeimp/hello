@@ -39,17 +39,6 @@ str-g++: hello_str.cpp
 	g++ hello_str.cpp -o hello_str-g++ # Just CLang renamed on my system
 
 
-test:
-	@echo
-	./hello_str-clang
-	@echo
-	./hello_str-clang++
-	@echo
-	./hello_str-clang++-03
-	@echo
-	hello_str-g++
-	@echo
-
 
 clean:
 	@echo "Cleaning up..."
@@ -73,8 +62,25 @@ list:
 	@echo 'make clean      Run cleanall then ls -ahl the directory'
 	@echo 'make cleanall   Remove all binaries, object files, etc.'
 	@echo 'make list       List all make tasks'
+	@echo 'make speed      Run time tests with timeit'
 	@echo 'make test       Test all examples'
 	@echo 'make ver        Prints the compiler or interpreter version(s)'
+	@echo
+
+
+speed:
+	timeit ./hello_str-clang++-03
+
+
+test:
+	@echo
+	./hello_str-clang
+	@echo
+	./hello_str-clang++
+	@echo
+	./hello_str-clang++-03
+	@echo
+	hello_str-g++
 	@echo
 
 

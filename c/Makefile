@@ -59,17 +59,6 @@ env: hello_env.c
 	HELLO=Environment ./hello_env
 
 
-test:
-	@echo
-	./hello_str
-	@echo
-	./hello_var
-	@echo
-	./hello_arg 'Command Line'
-	@echo
-	HELLO=Environment ./hello_env
-	@echo
-
 
 clean:
 	@echo "Cleaning up..."
@@ -101,8 +90,25 @@ list:
 	@echo 'make clean      Run cleanall then ls -ahl the directory'
 	@echo 'make cleanall   Remove all binaries, object files, etc.'
 	@echo 'make list       List all make tasks'
+	@echo 'make speed      Run time tests with timeit'
 	@echo 'make test       Test all examples'
 	@echo 'make ver        Prints the compiler or interpreter version'
+	@echo
+
+
+speed:
+	timeit ./hello_str "./hello_arg 'Command Line'"
+
+
+test:
+	@echo
+	./hello_str
+	@echo
+	./hello_var
+	@echo
+	./hello_arg 'Command Line'
+	@echo
+	HELLO=Environment ./hello_env
 	@echo
 
 
