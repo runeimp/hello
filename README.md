@@ -100,7 +100,7 @@ The following thoughts were regarding Assembler, C, Go, and Rust only when I wro
 
 I realize these are crap example of testing speed. The applications are too simple. But it still gives some reference for discussion.
 
-Running `time ./hello_str` five times for each binary, removing the max and min values, then averaging the the three that are left.
+Running `time ./hello_str` five times for each binary, removing the max and min values, then averaging the the three that are left. Times are in seconds.
 
 | Language                | real    | user    | sys     | Date       | Version                                                                      |
 | --------                | ---:    | ---:    | --:     | :--:       | -------                                                                      |
@@ -117,7 +117,7 @@ Running `time ./hello_str` five times for each binary, removing the max and min 
 
 
 
-Running `time ./hello_arg 'Command Line'` five times for each binary, removing the max and min values, then averaging the the three that are left.
+Running `time ./hello_arg 'Command Line'` five times for each binary, removing the max and min values, then averaging the the three that are left. Times are in seconds.
 
 | Language | real    | user    | sys     | Date       | Version                                                           |
 | -------- | ---:    | ---:    | --:     | :--:       | -------                                                           |
@@ -185,10 +185,10 @@ Scripting Languages
 | JSDB 1.8.0.7      | variable string output             | 56 B        | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
 | JSDB 1.8.0.7      | arg variable string output         | 74 B        | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
 | JSDB 1.8.0.7      | environment variable string output | 82 B        | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
-| Lua 5.2.4         | static string output               |             |                     |                          |                                                               |
-| Lua 5.2.4         | variable string output             |             |                     |                          |                                                               |
-| Lua 5.2.4         | arg variable string output         |             |                     |                          |                                                               |
-| Lua 5.2.4         | environment variable string output |             |                     |                          |                                                               |
+| Lua 5.2.4         | static string output               | 42 B        | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
+| Lua 5.2.4         | variable string output             | 49 B        | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
+| Lua 5.2.4         | arg variable string output         | 60 B        | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
+| Lua 5.2.4         | environment variable string output | 72 B        | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
 | Nashorn 1.8.0_111 | static string output               | 41 B        | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
 | Nashorn 1.8.0_111 | variable string output             | 52 B        | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
 | Nashorn 1.8.0_111 | arg variable string output         | 63 B        | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
@@ -261,12 +261,13 @@ Package Size
 
 ### Speed Runs
 
-Running `time ./hello_str.ext` five times for each script, removing the max and min values, then averaging the the three that are left.
+Running `time ./hello_str.ext` five times for each script, removing the max and min values, then averaging the the three that are left. Times are in seconds.
 
 | Language | real    | user    | sys     | Date       | Version                                                           |
 | -------- | ---:    | ---:    | --:     | :--:       | -------                                                           |
 | BASH     | 0.00400 | 0.00100 | 0.00100 | 2017-01-22 | GNU bash, version 4.4.5(1)-release (x86_64-apple-darwin15.6.0)... |
 | Fantom   | 0.81133 | 2.00233 | 2.00233 | 2017-01-22 | ...fan.version: 1.0.69...                                         |
+| Lua      | 0.00400 | 0.00100 | 0.00100 | 2017-01-23 |                                                                   |
 | REXX     | 0.00400 | 0.00100 | 0.00100 | 2017-01-22 |                                                                   |
 | Python 2 | 0.01800 | 0.01000 | 0.01000 | 2017-01-22 | Python 2.7.13                                                     |
 | Python 3 | 0.03200 | 0.02400 | 0.02400 | 2017-01-22 | Python 3.6.0                                                      |
@@ -274,12 +275,13 @@ Running `time ./hello_str.ext` five times for each script, removing the max and 
 
 
 
-Running `time ./hello_arg.ext 'Command Line'` five times for each script, removing the max and min values, then averaging the the three that are left.
+Running `time ./hello_arg.ext 'Command Line'` five times for each script, removing the max and min values, then averaging the the three that are left. Times are in seconds.
 
 | Language | real    | user    | sys     | Date       | Version                                                           |
 | -------- | ---:    | ---:    | --:     | :--:       | -------                                                           |
 | BASH     | 0.01100 | 0.00300 | 0.00300 | 2017-01-22 | GNU bash, version 4.4.5(1)-release (x86_64-apple-darwin15.6.0)... |
 | Fantom   | 2.46533 | 5.67833 | 5.67833 | 2017-01-22 | ...fan.version: 1.0.69...                                         |
+| Lua      | 0.01067 | 0.00267 | 0.00267 | 2017-01-23 |                                                                   |
 | REXX     | 0.01067 | 0.00267 | 0.00267 | 2017-01-22 |                                                                   |
 | Python 2 | 0.04833 | 0.02667 | 0.02667 | 2017-01-22 | Python 2.7.13                                                     |
 | Python 3 | 0.08600 | 0.06400 | 0.06400 | 2017-01-22 | Python 3.6.0                                                      |

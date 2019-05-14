@@ -21,6 +21,10 @@ all:
 	@echo
 	@make env
 	@echo
+	@make stdin
+	@echo
+	@# make tiny
+	@# echo
 
 
 str: hello_str.go
@@ -41,12 +45,28 @@ var: hello_var.go
 arg: hello_arg.go
 	go build hello_arg.go
 	./hello_arg 'Command Line'
+	@# tinygo build -opt=z -gc=dumb -o hello_arg_tiny hello_arg.go
 
 
 env: hello_env.go
 	go build hello_env.go
 	HELLO=Environment ./hello_env
 
+
+stdin: hello_stdin.go
+	go build hello_stdin.go
+	echo "Standard Input" | ./hello_stdin
+
+
+tiny: hello_str.go
+	tinygo build -opt=z -gc=dumb -o hello_min_tiny hello_min.go
+	tinygo build -opt=z -gc=dumb -o hello_str_tiny hello_str.go
+	tinygo build -opt=z -gc=dumb -o hello_var_tiny hello_var.go
+	@# tinygo build -opt=z -gc=dumb -o hello_arg_tiny hello_arg.go
+	@# tinygo build -opt=z -gc=dumb -o hello_stdin_tiny hello_stdin.go
+	./hello_min_tiny
+	./hello_str_tiny
+	./hello_var_tiny
 
 
 clean:
@@ -56,21 +76,20 @@ clean:
 
 
 cleanall:
-	@rm -f hello_str
-	@rm -f hello_min
-	@rm -f hello_var
-	@rm -f hello_arg
-	@rm -f hello_env
+	@rm -f hello_str hello_min hello_var hello_arg hello_env hello_stdin
+	@rm -f hello_*_tiny
 
 
 list:
 	@echo
 	@echo 'make            Run all example build and test tasks'
-	@echo 'make str        Build the print string example and test it'
-	@echo 'make min        Build the print string example (minimized) and test it'
-	@echo 'make var        Build the print variable string example and test it'
-	@echo 'make arg        Build the print command line argument example and test it'
-	@echo 'make env        Build the print environment variable example and test it'
+	@echo 'make str        Build and print string example and test it'
+	@echo 'make min        Build and print string example (minimized) and test it'
+	@echo 'make var        Build and print variable string example and test it'
+	@echo 'make arg        Build and print command line argument example and test it'
+	@echo 'make env        Build and print environment variable example and test it'
+	@echo 'make stdin      Build and print stdin example and test it'
+	@echo 'make tiny       Build everything with TinyGo'
 	@echo
 	@echo 'make clean      Run cleanall then ls -ahl the directory'
 	@echo 'make cleanall   Remove all binaries, object files, etc.'
@@ -98,6 +117,18 @@ test:
 	@echo
 	HELLO=Environment ./hello_env
 	@echo
+	echo "Standard Input" | ./hello_stdin
+	@echo
+	./hello_str_tiny
+	@echo
+	./hello_min_tiny
+	@echo
+	./hello_var_tiny
+	@echo
+	@# ./hello_arg_tiny 'Command Line'
+	@# echo
+	@# HELLO=Environment ./hello_env_tiny
+	@# echo
 
 
 ver:

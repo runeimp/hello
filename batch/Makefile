@@ -4,7 +4,7 @@
 
 
 default:
-	@make test
+	@make list
 
 
 list:
@@ -16,19 +16,19 @@ list:
 
 
 speed:
-	timeit ./hello_arg.sh "./hello_arg.sh 'Command Line'"
+	timeit ./hello_arg.bat "./hello_arg.bat 'Command Line'"
 
 
 test:
 	@clear
 	@echo
-	./hello_str.sh
+	./hello_str.bat
 	@echo
-	./hello_var.sh
+	./hello_var.bat
 	@echo
-	./hello_arg.sh 'Command Line'
+	./hello_arg.bat 'Command Line'
 	@echo
-	HELLO=Environment ./hello_env.sh
+	HELLO=Environment ./hello_env.bat
 	@echo
 
 
@@ -37,4 +37,4 @@ list2:
 
 
 ver:
-	bash --version
+	echo "See https://stackoverflow.com/questions/1792740/how-to-tell-what-version-of-windows-and-or-cmd-exe-a-batch-file-is-running-on"

@@ -1,0 +1,54 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_white_space = true
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# Indentation override for all JavaScript, JSON, Python, and shell scripts
+[*.{bash,command,js,json,py,sh}]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
+# Formats that REQUIRE two spaces
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+tab_width = 2
+trim_trailing_white_space = false
+
+# Markdown formatting
+[*.md]
+indent_style = space
+indent_size = 4
+tab_width = 4
+trim_trailing_white_space = false
+
+# Makeish Formats
+[*{Justfile,Makefile}]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Windows Formats
+[*.{bat,ini}]
+charset = ascii
+end_of_line = crlf
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+[*.zig]
+indent_style = space
+indent_size = 4
+tab_width = 4
+trim_trailing_white_space = false
