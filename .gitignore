@@ -29,3 +29,5 @@ hello_str_64
 hello_str_64-gas
 hello_str_64-gcc
 hello_var
+hello_*_bin
+hello_*_min
