@@ -55,7 +55,7 @@ env: hello_env.go
 
 stdin: hello_stdin.go
 	go build hello_stdin.go
-	echo "Standard Input" | ./hello_stdin
+	printf "Standard Input" | ./hello_stdin
 
 
 tiny: hello_str.go

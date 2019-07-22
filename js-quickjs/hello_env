@@ -1,0 +1,7 @@
+#!/usr/bin/env qjs
+
+arg = std.getenv("HELLO")
+
+x = "Hello, " + arg + "!"
+
+console.log(x)
