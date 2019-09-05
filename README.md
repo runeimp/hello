@@ -44,7 +44,11 @@ Compiled Languages
 | Scheme (Chicken 4.11.0)       | variable string output             | 74 B        | 14,272       | 13.94 KB    | Compiled using [CHICKEN Scheme][]                     |
 | Scheme (Chicken 4.11.0)       | arg variable string output         | 84 B        | 14,280       | 13.95 KB    | Compiled using [CHICKEN Scheme][]                     |
 | Scheme (Chicken 4.11.0)       | environment variable string output | 88 B        | 14,232       | 13.90 KB    | Compiled using [CHICKEN Scheme][]                     |
-
+| V 0.1.16                      | static string output (debug)       | 39 B        | 61,880       | 60.43 KB    |                                                       |
+| V 0.1.16                      | static string output (production)  | 39 B        | 54,136       | 52.87 KB    |                                                       |
+| V 0.1.16                      | variable string output             | 47 B        | 61,872       | 60.42 KB    |                                                       |
+| V 0.1.16                      | argument string output             | 67 B        | 87,504       | 85.45 KB    |                                                       |
+| V 0.1.16                      | environment variable string output | 61 B        | 87,504       | 85.45 KB    |                                                       |
 
 | Str Bytes | Language         |
 | --------: | --------         |
@@ -53,6 +57,7 @@ Compiled Languages
 | `0008432` | C                |
 | `0010679` | C++              |
 | `0014160` | Scheme           |
+| `0061880` | V                |
 | `0105968` | Crystal          |
 | `0346504` | Rust             |
 | `0612580` | ooc              |
@@ -60,30 +65,31 @@ Compiled Languages
 | `1611712` | Go               |
 
 
-
 ### Basic Finding
 
-| Language  | Simplicity | Speed | Binary Size | Total | Simplicity & Speed |
-| --------  | :--------: | :---: | :---------: | :---: | :----------------: |
-| Assembler | 5          | 1     | 2           | 8     | 6                  |
-| C         | 4          | 1     | 2           | 7     | 5                  |
-| C++       | 3          | 1     | 3           | 7     | 4                  |
-| Crystal   | 2          | 1     | 4           | 7     | 3                  |
-| D         | 2          | 1     | 4           | 8     | 3                  |
-| Go        | 3          | 1     | 5           | 9     | 4                  |
-| ooc       | 1          | 2     | 4           | 7     | 3                  |
-| Rust      | 3          | 1     | 4           | 8     | 4                  |
-| Scheme    | 2          | 1     | 3           | 6     | 3                  |
+| Language  | Simplicity | Speed | Binary Size | Compiler Complexity | Cross Platform | Total | Simplicity & Speed |
+| --------  | :--------: | :---: | :---------: | :-----------------: | :------------: | :---: | :----------------: |
+| Assembler | 5          | 1     | 2           |                     | 4              | 8     | 6                  |
+| C         | 4          | 1     | 2           |                     | 3              | 7     | 5                  |
+| C++       | 3          | 1     | 3           |                     | 3              | 7     | 4                  |
+| Crystal   | 2          | 1     | 4           |                     |                | 7     | 3                  |
+| D         | 2          | 1     | 4           |                     |                | 8     | 3                  |
+| Go        | 3          | 1     | 5           | 1                   | 1              | 9     | 4                  |
+| ooc       | 1          | 2     | 4           |                     |                | 7     | 3                  |
+| Rust      | 3          | 1     | 4           |                     |                | 8     | 4                  |
+| Scheme    | 2          | 1     | 3           |                     |                | 6     | 3                  |
+| V         | 2          | 1     | 3           | 1                   | 2?             | 6     | 3                  |
+
 
 <small>Lower numbers are better.</small>
 
-| Rank | Language Simplicity               | Binary Size | Binary Speed    |
-| :--: | :-----------------:               | :---------: | :----------:    |
-| 1    | Very simple for most basic tasks  | < 1 KB      | < 0m0.003s real |
-| 2    | Simple for most basic tasks       | < 10 KB     | < 0m0.005s real |
-| 3    | OK for most basic tasks           | < 100 KB    | < 0m0.007s real |
-| 4    | Complex for most basic tasks      | < 1 MB      | < 0m0.009s real |
-| 5    | Very complex for most basic tasks | >= 1 MB     | > 0m0.008s real |
+| Rank | Language Simplicity               | Binary Size | Binary Speed    | Compiler Complexity                                                 | Cross Platform                                                               |
+| :--: | :-----------------:               | :---------: | :----------:    | :-----------------:                                                 | :------------:                                                               |
+| 1    | Very simple for most basic tasks  | < 1 KB      | < 0m0.003s real | Minimal option list that is almost never needed                     | Only needs a few command line arguments or environment vars to cross compile |
+| 2    | Simple for most basic tasks       | < 10 KB     | < 0m0.005s real | Simple option list with good defaults                               | Requires a simple tool-chain to cross compile                                |
+| 3    | OK for most basic tasks           | < 100 KB    | < 0m0.007s real | Reasonable option list with good defaults                           | Requires an extensive tool-chain to cross compile                            |
+| 4    | Complex for most basic tasks      | < 1 MB      | < 0m0.009s real | Extensive option list with reasonable defaults                      | Can only compile the current platform                                          |
+| 5    | Very complex for most basic tasks | >= 1 MB     | > 0m0.008s real | Extensive option list and requires many option for a simple compile | Can only compile on one platform                                             |
 
 
 The following thoughts were regarding Assembler, C, Go, and Rust only when I wrote them.
@@ -165,6 +171,9 @@ Rust
 
 Scheme
 : `csc appname.scm`
+
+V
+: `v appname.v`
 
 
 Scripting Languages
