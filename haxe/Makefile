@@ -86,7 +86,6 @@ list:
 
 speed:
 	timeit hello_str/HelloStr "hello_arg/HelloArg 'Command Line'"
-	@# timeit "neko HelloStr.n" "neko hello_var.n" "neko hello_arg.n 'Command Line'" "HELLO=Environment neko hello_env.n"
 
 
 test:

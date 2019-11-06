@@ -265,23 +265,27 @@ Source Size
 
 | Language | Simplicity | Speed | Binary Size | Total | Simplicity & Speed |
 | -------- | :--------: | :---: | :---------: | :---: | :----------------: |
-| BASH     | 1          | 1     | 1           | 3     | 6                  |
+| BASH     | 1          | 2     | 1           | 3     | 6                  |
 | Fantom   | 3          | 4     | 1           | 8     | 6                  |
-| Node     | 1          |       |             |       |                    |
-| Python 2 | 2          | 2     | 1           | 4     | 3                  |
-| Python 3 | 2          | 2     | 1           | 4     | 3                  |
-| RingoJS  | 1          |       |             |       |                    |
-| Tcl      | 1          | 2     | 1           | 3     | 3                  |
+| Lua      | 1          | 4     | 3           | 8     | 5                  |
+| Neko     | 1          | 5     | 3           | 9     | 6                  |
+| Node     | 1          | 5     | 5           | 11    | 6                  |
+| Python 2 | 2          | 5     | 3           | 10    | 3                  |
+| Python 3 | 2          | 5     | 2           | 9     | 3                  |
+| REXX     | 1          | 4     | 4           | 9     | 5                  |
+| RingoJS  | 1          |       | 3           |       |                    |
+| Tcl      | 1          | 5     | 1           | 3     | 3                  |
 
 <small>Lower numbers are better.</small>
 
-| Rank | Language Simplicity               | Binary Size | Binary Speed    |
-| :--: | :-----------------:               | :---------: | :----------:    |
-| 1    | Very simple for most basic tasks  | < 1 KB      | < 0m0.003s real |
-| 2    | Simple for most basic tasks       | < 10 KB     | < 0m0.005s real |
-| 3    | OK for most basic tasks           | < 100 KB    | < 0m0.007s real |
-| 4    | Complex for most basic tasks      | < 1 MB      | < 0m0.009s real |
-| 5    | Very complex for most basic tasks | >= 1 MB     | > 0m0.008s real |
+| Rank | Language Simplicity               | Binary Size | Binary Speed     |
+| :--: | :-----------------:               | :---------: | :----------:     |
+| 1    | Very simple for most basic tasks  | < 1 KB      | < 0m0.003s real  |
+| 2    | Simple for most basic tasks       | < 10 KB     | < 0m0.005s real  |
+| 3    | OK for most basic tasks           | < 100 KB    | < 0m0.007s real  |
+| 4    | Complex for most basic tasks      | < 1 MB      | < 0m0.009s real  |
+| 5    | Very complex for most basic tasks | >= 1 MB     | >= 0m0.009s real |
+
 
 
 ### Speed Runs
@@ -292,10 +296,12 @@ Running `time ./hello_str.ext` five times for each script, removing the max and 
 | -------- | ---:    | ---:    | --:     | :--:       | -------                                                           |
 | BASH     | 0.00400 | 0.00100 | 0.00100 | 2017-01-22 | GNU bash, version 4.4.5(1)-release (x86_64-apple-darwin15.6.0)... |
 | Fantom   | 0.81133 | 2.00233 | 2.00233 | 2017-01-22 | ...fan.version: 1.0.69...                                         |
-| Lua      | 0.00400 | 0.00100 | 0.00100 | 2017-01-23 |                                                                   |
-| REXX     | 0.00400 | 0.00100 | 0.00100 | 2017-01-22 |                                                                   |
+| Lua      | 0.00620 | 0.00200 | 0.00200 | 2019-11-06 | Lua 5.3.5  Copyright (C) 1994-2018 Lua.org, PUC-Rio               |
+| Neko     | 0.00820 | 0.00300 | 0.00300 | 2019-11-06 | NekoVM 2.3.0 (c)2005-2017 Haxe Foundation                         |
+| Node     | 0.08820 | 0.03420 | 0.03420 | 2019-11-06 | Node v12.12.0                                                     |
 | Python 2 | 0.01800 | 0.01000 | 0.01000 | 2017-01-22 | Python 2.7.13                                                     |
 | Python 3 | 0.03200 | 0.02400 | 0.02400 | 2017-01-22 | Python 3.6.0                                                      |
+| REXX     | 0.00400 | 0.00100 | 0.00100 | 2017-01-22 | rexx: REXX-Regina_3.9.1 5.00 5 Apr 2015 (64 bit)                  |
 | Tcl      | 0.01200 | 0.00500 | 0.00500 | 2017-01-22 | Tcl 8.5.9                                                         |
 
 
@@ -306,10 +312,12 @@ Running `time ./hello_arg.ext 'Command Line'` five times for each script, removi
 | -------- | ---:    | ---:    | --:     | :--:       | -------                                                           |
 | BASH     | 0.01100 | 0.00300 | 0.00300 | 2017-01-22 | GNU bash, version 4.4.5(1)-release (x86_64-apple-darwin15.6.0)... |
 | Fantom   | 2.46533 | 5.67833 | 5.67833 | 2017-01-22 | ...fan.version: 1.0.69...                                         |
-| Lua      | 0.01067 | 0.00267 | 0.00267 | 2017-01-23 |                                                                   |
-| REXX     | 0.01067 | 0.00267 | 0.00267 | 2017-01-22 |                                                                   |
+| Lua      | 0.01180 | 0.00400 | 0.00400 | 2019-11-06 | Lua 5.3.5  Copyright (C) 1994-2018 Lua.org, PUC-Rio               |
+| Neko     | 0.01420 | 0.00600 | 0.00600 | 2019-11-06 | NekoVM 2.3.0 (c)2005-2017 Haxe Foundation                         |
+| Node     | 0.13560 | 0.06660 | 0.06660 | 2019-11-06 | Node v12.12.0                                                     |
 | Python 2 | 0.04833 | 0.02667 | 0.02667 | 2017-01-22 | Python 2.7.13                                                     |
 | Python 3 | 0.08600 | 0.06400 | 0.06400 | 2017-01-22 | Python 3.6.0                                                      |
+| REXX     | 0.01067 | 0.00267 | 0.00267 | 2017-01-22 | rexx: REXX-Regina_3.9.1 5.00 5 Apr 2015 (64 bit)                  |
 | Tcl      | 0.03233 | 0.01333 | 0.01333 | 2017-01-22 | Tcl 8.5.9                                                         |
 
 
