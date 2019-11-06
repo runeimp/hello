@@ -1,0 +1,3 @@
+var x = $loader.args[0];
+
+$print("Hello, ", x, "!\n");

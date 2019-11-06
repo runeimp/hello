@@ -180,60 +180,67 @@ Scripting Languages
 -------------------
 
 
-| Language          | Category                           | Source Size | Binary Size         | Package Size             | Interpreter                                                   |
-| --------          | --------                           | ----------: | ----------:         | -----------:             | -----------                                                   |
-| BASH v4.4.5       | static string output               | 41 B        | 946.56 KB           | (source) 8.94 MB         | `bash` shell                                                  |
-| BASH v4.4.5       | variable string output             | 49 B        | 946.56 KB           | (source) 8.94 MB         | `bash` shell                                                  |
-| BASH v4.4.5       | argument string output             | 48 B        | 946.56 KB           | (source) 8.94 MB         | `bash` shell                                                  |
-| BASH v4.4.5       | environment variable string output | 52 B        | 946.56 KB           | (source) 8.94 MB         | `bash` shell                                                  |
-| Fantom v1.0.69    | static string output               | 84 B        | 2.27 KB             | 13.16 MB                 | `fan` interpreter (BASH script that launches Java Jar file)   |
-| Fantom v1.0.69    | variable string output             | 98 B        | 2.27 KB             | 13.16 MB                 | `fan` interpreter (BASH script that launches Java Jar file)   |
-| Fantom v1.0.69    | arg variable string output         | 129 B       | 2.27 KB             | 13.16 MB                 | `fan` interpreter (BASH script that launches Java Jar file)   |
-| Fantom v1.0.69    | environment variable string output | 133 B       | 2.27 KB             | 13.16 MB                 | `fan` interpreter (BASH script that launches Java Jar file)   |
-| JSDB 1.8.0.7      | static string output               | 45 B        | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
-| JSDB 1.8.0.7      | variable string output             | 56 B        | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
-| JSDB 1.8.0.7      | arg variable string output         | 74 B        | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
-| JSDB 1.8.0.7      | environment variable string output | 82 B        | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
-| Lua 5.2.4         | static string output               | 42 B        | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
-| Lua 5.2.4         | variable string output             | 49 B        | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
-| Lua 5.2.4         | arg variable string output         | 60 B        | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
-| Lua 5.2.4         | environment variable string output | 72 B        | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
-| Nashorn 1.8.0_111 | static string output               | 41 B        | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
-| Nashorn 1.8.0_111 | variable string output             | 52 B        | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
-| Nashorn 1.8.0_111 | arg variable string output         | 63 B        | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
-| Nashorn 1.8.0_111 | environment variable string output | 65 B        | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
-| Node v7.4.0       | static string output               | 49 B        | 31.43 MB            | 9.84 MB                  | `node` interpreter (V8 based binary)                          |
-| Node v7.4.0       | variable string output             | 60 B        | 31.43 MB            | 9.84 MB                  | `node` interpreter (V8 based binary)                          |
-| Node v7.4.0       | arg variable string output         | 85 B        | 31.43 MB            | 9.84 MB                  | `node` interpreter (V8 based binary)                          |
-| Node v7.4.0       | environment variable string output | 87 B        | 31.43 MB            | 9.84 MB                  | `node` interpreter (V8 based binary)                          |
-| Python 2.7.13     | static string output               | 44 B        | 13.00 KB            | 16.29 MB                 | `python` interpreter                                          |
-| Python 2.7.13     | variable string output             | 58 B        | 13.00 KB            | 16.29 MB                 | `python` interpreter                                          |
-| Python 2.7.13     | arg variable string output         | 74 B        | 13.00 KB            | 16.29 MB                 | `python` interpreter                                          |
-| Python 2.7.13     | environment variable string output | 81 B        | 13.00 KB            | 16.29 MB                 | `python` interpreter                                          |
-| Python 3.6.0      | static string output               | 46 B        | 13.30 KB            | 21.23 MB                 | `python3` interpreter                                         |
-| Python 3.6.0      | variable string output             | 66 B        | 13.30 KB            | 21.23 MB                 | `python3` interpreter                                         |
-| Python 3.6.0      | arg variable string output         | 83 B        | 13.30 KB            | 21.23 MB                 | `python3` interpreter                                         |
-| Python 3.6.0      | environment variable string output | 89 B        | 13.30 KB            | 21.23 MB                 | `python3` interpreter                                         |
-| REXX 5.00         | static string output               | 40 B        | 348.90 KB           | 2.73 MB                  | `rexx` interpreter (Regina 3.9.1)                             |
-| REXX 5.00         | variable string output             | 47 B        | 348.90 KB           | 2.73 MB                  | `rexx` interpreter (Regina 3.9.1)                             |
-| REXX 5.00         | arg variable string output         | 50 B        | 348.90 KB           | 2.73 MB                  | `rexx` interpreter (Regina 3.9.1)                             |
-| REXX 5.00         | environment variable string output | 73 B        | 348.90 KB           | 2.73 MB                  | `rexx` interpreter (Regina 3.9.1)                             |
-| RingoJS 1.0.0     | static string output               | 50 B        | (`run.jar`) 4.97 KB | 4.32 MB + JRE = 74.58 MB | `ringo` interpreter (BASH script that launches Java Jar file) |
-| RingoJS 1.0.0     | variable string output             | 61 B        | (`run.jar`) 4.97 KB | 4.32 MB + JRE = 74.58 MB | `ringo` interpreter (BASH script that launches Java Jar file) |
-| RingoJS 1.0.0     | arg variable string output         | 129 B       | (`run.jar`) 4.97 KB | 4.32 MB + JRE = 74.58 MB | `ringo` interpreter (BASH script that launches Java Jar file) |
-| RingoJS 1.0.0     | environment variable string output | 162 B       | (`run.jar`) 4.97 KB | 4.32 MB + JRE = 74.58 MB | `ringo` interpreter (BASH script that launches Java Jar file) |
-| Tcl 8.5.9         | static string output               | 42 B        | 49.41 KB            | 21.90 MB                 | `tclsh` shell                                                 |
-| Tcl 8.5.9         | variable string output             | 52 B        | 49.41 KB            | 21.90 MB                 | `tclsh` shell                                                 |
-| Tcl 8.5.9         | arg variable string output         | 53 B        | 49.41 KB            | 21.90 MB                 | `tclsh` shell                                                 |
-| Tcl 8.5.9         | environment variable string output | 48 B        | 49.41 KB            | 21.90 MB                 | `tclsh` shell                                                 |
+| Language          | Category                           | Source Size   | Binary Size         | Package Size             | Interpreter                                                   |
+| --------          | --------                           | ----------:   | ----------:         | -----------:             | -----------                                                   |
+| BASH v4.4.5       | static string output               | 41 B          | 946.56 KB           | (source) 8.94 MB         | `bash` shell                                                  |
+| BASH v4.4.5       | variable string output             | 49 B          | 946.56 KB           | (source) 8.94 MB         | `bash` shell                                                  |
+| BASH v4.4.5       | argument string output             | 48 B          | 946.56 KB           | (source) 8.94 MB         | `bash` shell                                                  |
+| BASH v4.4.5       | environment variable string output | 52 B          | 946.56 KB           | (source) 8.94 MB         | `bash` shell                                                  |
+| Fantom v1.0.69    | static string output               | 84 B          | 2.27 KB             | 13.16 MB                 | `fan` interpreter (BASH script that launches Java Jar file)   |
+| Fantom v1.0.69    | variable string output             | 98 B          | 2.27 KB             | 13.16 MB                 | `fan` interpreter (BASH script that launches Java Jar file)   |
+| Fantom v1.0.69    | arg variable string output         | 129 B         | 2.27 KB             | 13.16 MB                 | `fan` interpreter (BASH script that launches Java Jar file)   |
+| Fantom v1.0.69    | environment variable string output | 133 B         | 2.27 KB             | 13.16 MB                 | `fan` interpreter (BASH script that launches Java Jar file)   |
+| JSDB 1.8.0.7      | static string output               | 45 B          | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
+| JSDB 1.8.0.7      | variable string output             | 56 B          | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
+| JSDB 1.8.0.7      | arg variable string output         | 74 B          | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
+| JSDB 1.8.0.7      | environment variable string output | 82 B          | 3.49 MB             | 0.99 MB                  | `jsdb` interpreter (SpiderMonkey based binary)                |
+| Lua 5.2.4         | static string output               | 42 B          | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
+| Lua 5.2.4         | variable string output             | 49 B          | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
+| Lua 5.2.4         | arg variable string output         | 60 B          | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
+| Lua 5.2.4         | environment variable string output | 72 B          | 19.30 KB            | 173.38 KB                | `lua` interpreter                                             |
+| Nashorn 1.8.0_111 | static string output               | 41 B          | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
+| Nashorn 1.8.0_111 | variable string output             | 52 B          | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
+| Nashorn 1.8.0_111 | arg variable string output         | 63 B          | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
+| Nashorn 1.8.0_111 | environment variable string output | 65 B          | 57.11 KB            | (JDK) 174.76 MB          | `jjs` interpreter                                             |
+| Neko v2.3.0_1     | static string output               | 27 B / 70 B   | 19.30 KB            | 623.7 KB                 | `neko` virtual machine                                        |
+| Neko v2.3.0_1     | variable string output             | 41 B / 80 B   | 19.30 KB            | 623.7 KB                 | `neko` virtual machine                                        |
+| Neko v2.3.0_1     | arg variable string output         | 54 B / 99 B   | 19.30 KB            | 623.7 KB                 | `neko` virtual machine                                        |
+| Neko v2.3.0_1     | environment variable string output | 104 B / 140 B | 19.30 KB            | 623.7 KB                 | `neko` virtual machine                                        |
+| Node v7.4.0       | static string output               | 49 B          | 31.43 MB            | 9.84 MB                  | `node` interpreter (V8 based binary)                          |
+| Node v7.4.0       | variable string output             | 60 B          | 31.43 MB            | 9.84 MB                  | `node` interpreter (V8 based binary)                          |
+| Node v7.4.0       | arg variable string output         | 85 B          | 31.43 MB            | 9.84 MB                  | `node` interpreter (V8 based binary)                          |
+| Node v7.4.0       | environment variable string output | 87 B          | 31.43 MB            | 9.84 MB                  | `node` interpreter (V8 based binary)                          |
+| Python 2.7.13     | static string output               | 44 B          | 13.00 KB            | 16.29 MB                 | `python` interpreter                                          |
+| Python 2.7.13     | variable string output             | 58 B          | 13.00 KB            | 16.29 MB                 | `python` interpreter                                          |
+| Python 2.7.13     | arg variable string output         | 74 B          | 13.00 KB            | 16.29 MB                 | `python` interpreter                                          |
+| Python 2.7.13     | environment variable string output | 81 B          | 13.00 KB            | 16.29 MB                 | `python` interpreter                                          |
+| Python 3.6.0      | static string output               | 46 B          | 13.30 KB            | 21.23 MB                 | `python3` interpreter                                         |
+| Python 3.6.0      | variable string output             | 66 B          | 13.30 KB            | 21.23 MB                 | `python3` interpreter                                         |
+| Python 3.6.0      | arg variable string output         | 83 B          | 13.30 KB            | 21.23 MB                 | `python3` interpreter                                         |
+| Python 3.6.0      | environment variable string output | 89 B          | 13.30 KB            | 21.23 MB                 | `python3` interpreter                                         |
+| REXX 5.00         | static string output               | 40 B          | 348.90 KB           | 2.73 MB                  | `rexx` interpreter (Regina 3.9.1)                             |
+| REXX 5.00         | variable string output             | 47 B          | 348.90 KB           | 2.73 MB                  | `rexx` interpreter (Regina 3.9.1)                             |
+| REXX 5.00         | arg variable string output         | 50 B          | 348.90 KB           | 2.73 MB                  | `rexx` interpreter (Regina 3.9.1)                             |
+| REXX 5.00         | environment variable string output | 73 B          | 348.90 KB           | 2.73 MB                  | `rexx` interpreter (Regina 3.9.1)                             |
+| RingoJS 1.0.0     | static string output               | 50 B          | (`run.jar`) 4.97 KB | 4.32 MB + JRE = 74.58 MB | `ringo` interpreter (BASH script that launches Java Jar file) |
+| RingoJS 1.0.0     | variable string output             | 61 B          | (`run.jar`) 4.97 KB | 4.32 MB + JRE = 74.58 MB | `ringo` interpreter (BASH script that launches Java Jar file) |
+| RingoJS 1.0.0     | arg variable string output         | 129 B         | (`run.jar`) 4.97 KB | 4.32 MB + JRE = 74.58 MB | `ringo` interpreter (BASH script that launches Java Jar file) |
+| RingoJS 1.0.0     | environment variable string output | 162 B         | (`run.jar`) 4.97 KB | 4.32 MB + JRE = 74.58 MB | `ringo` interpreter (BASH script that launches Java Jar file) |
+| Tcl 8.5.9         | static string output               | 42 B          | 49.41 KB            | 21.90 MB                 | `tclsh` shell                                                 |
+| Tcl 8.5.9         | variable string output             | 52 B          | 49.41 KB            | 21.90 MB                 | `tclsh` shell                                                 |
+| Tcl 8.5.9         | arg variable string output         | 53 B          | 49.41 KB            | 21.90 MB                 | `tclsh` shell                                                 |
+| Tcl 8.5.9         | environment variable string output | 48 B          | 49.41 KB            | 21.90 MB                 | `tclsh` shell                                                 |
 
 
 Binary Size
-: The size of the main executable of the shell or interpretter
+: The size of the main executable of the shell or interpreter/virtual machine
 
 Package Size
-: The size of the Linux Tar.GZip or Zip archive. This was the most consistent downloadable install package format.
+: The size of the Linux Tar.GZip or Zip archive. This was the most consistent downloaded install package format.
 
+Source Size
+: The first (or only) value is the size of the source file
+: The second value (if present) is the size of the generated bytecode
 
 | Str Bytes | Language         |
 | --------: | --------         |

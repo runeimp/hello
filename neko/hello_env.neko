@@ -1,0 +1,5 @@
+var get_env = $loader.loadprim("std@get_env", 1);
+
+var x = get_env("HELLO")
+
+$print("Hello, ", x, "!\n")
