@@ -32,6 +32,10 @@ Compiled Languages
 | Go v1.7.4                     | variable string output             | 89 B        | 1,620,096    | 1.55 MB     | `fmt.Printf` is smaller than `fmt.Println`?           |
 | Go v1.7.4                     | arg variable string output         | 122 B       | 1,620,128    | 1.55 MB     | `os.Args` package is free with `fmt` package?         |
 | Go v1.7.4                     | environment variable string output | 130 B       | 1,624,256    | 1.55 MB     |                                                       |
+| Haxe 4.0.1                    | static string output               | 86 B        | 680,228      | 664.3 KB    |                                                       |
+| Haxe 4.0.1                    | variable string output             | 99 B        | 680,228      | 664.3 KB    |                                                       |
+| Haxe 4.0.1                    | arg variable string output         | 108 B       | 680,244      | 664.3 KB    |                                                       |
+| Haxe 4.0.1                    | environment variable string output | 114 B       | 680,244      | 664.3 KB    |                                                       |
 | ooc (rock 0.9.10)             | static string output               | 25 B        | 612,580      | 598.22 KB   |                                                       |
 | ooc (rock 0.9.10)             | variable string output             | 37 B        | 612,668      | 598.31 KB   |                                                       |
 | ooc (rock 0.9.10)             | arg variable string output         | 72 B        | 616,820      | 602.36 KB   |                                                       |
@@ -117,6 +121,7 @@ Running `time ./hello_str` five times for each binary, removing the max and min 
 | Crystal                 | 0.00433 | 0.00200 | 0.00200 | 2017-01-22 | Crystal 0.20.4 (2017-01-06)                                                  |
 | D                       | 0.00300 | 0.00100 | 0.00100 | 2017-01-22 | DMD64 D Compiler v2.072.2                                                    |
 | Go                      | 0.00367 | 0.00000 | 0.00000 | 2017-01-22 | go version go1.7.4 darwin/amd64                                              |
+| Haxe                    | 0.01640 | 0.00780 | 0.00780 | 2019-11-06 | haxe 4.0.1                                                                   |
 | ooc                     | 0.00400 | 0.00200 | 0.00200 | 2017-01-22 | rock 0.9.10 codename rita, built on Sun Apr 10 01:50:13 2016                 |
 | Rust                    | 0.00300 | 0.00100 | 0.00100 | 2017-01-22 | rustc 1.14.0                                                                 |
 | Scheme                  | 0.00500 | 0.00200 | 0.00200 | 2017-01-22 | (c) 2008-2016, The CHICKEN Team...Version 4.11.0 (rev ce980c4)...            |
@@ -131,6 +136,7 @@ Running `time ./hello_arg 'Command Line'` five times for each binary, removing t
 | Crystal  | 0.01100 | 0.00533 | 0.00533 | 2017-01-22 | Crystal 0.20.4 (2017-01-06)                                       |
 | D        | 0.00900 | 0.00267 | 0.00267 | 2017-01-22 | DMD64 D Compiler v2.072.2                                         |
 | Go       | 0.01000 | 0.00133 | 0.00133 | 2017-01-22 | go version go1.7.4 darwin/amd64                                   |
+| Haxe     | 0.03260 | 0.01560 | 0.01560 | 2019-11-06 | haxe 4.0.1                                                        |
 | ooc      | 0.01067 | 0.00533 | 0.00533 | 2017-01-22 | rock 0.9.10 codename rita, built on Sun Apr 10 01:50:13 2016      |
 | Rust     | 0.00800 | 0.00267 | 0.00267 | 2017-01-22 | rustc 1.14.0                                                      |
 | Scheme   | 0.01333 | 0.00533 | 0.00533 | 2017-01-22 | (c) 2008-2016, The CHICKEN Team...Version 4.11.0 (rev ce980c4)... |
@@ -162,6 +168,9 @@ D
 
 Go
 : `go build appname.go`
+
+Haxe
+: `haxe -main AppClassName --cpp appname` appname is a directory that will contain the binary `AppClassName` or `AppClassName.exe` along with all the generated C++ source files
 
 ooc
 : `rock -v appname.occ`
